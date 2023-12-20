@@ -1,0 +1,17 @@
+{
+  "name": "deals-on-demand",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "minify": "uglifyjs -o index.min.js index.js",
+    "serve": "serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.2.1",
+    "uglify-js": "^3.17.4"
+  }
+}
