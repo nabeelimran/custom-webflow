@@ -322,9 +322,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
       let landNSnow = formDataObj["Land-and-Snow-2"];
       const OwnerPaidUtils =
         propertyTaxes + insurance + gas + water + sewer + garbage + landNSnow;
+      let totalExpenses = OwnerPaidUtils * holdingPeriod
+
       let salesCostPercent = formDataObj["Sales-Cost"];
+      let saleFee = (salesCostPercent/100) * targetPrice
+
       let closingCostsPercent = formDataObj["Closing-Costs"];
-      let closingCost = (closingCostsPercent / 100) * totalCost
+      let closingCost = (closingCostsPercent / 100) * targetPrice
 
       // Mortgage
       let downPaymentPurchase =
@@ -336,13 +340,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
       let interestRatePercent = formDataObj["Interest-Rate"];
       let processingFee = formDataObj["Financing-Costs"];
 
-      let saleFee = 0.06 * targetPrice
-
       let loan = downPaymentPurchase + downPaymentRehab
-      let totalInterest = -(loan * (interestRatePercent/100) * holdingPeriod / 12)
-      let loanEstimate = totalInterest + processingFee
-      let grossMargin = targetPrice-totalCost+loanEstimate
-      console.log({loan, totalInterest, loanEstimate});
+      let totalInterest = loan * (interestRatePercent/100) * holdingPeriod / 12
+      // let loanEstimate = totalInterest + processingFee
+      let loanEstimate = processingFee
+      let grossMargin = targetPrice - totalCost - loanEstimate - totalExpenses - closingCost
 
       let netProfit = grossMargin - saleFee
 
@@ -352,7 +354,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
       flipResult.querySelector('#holding-period').innerText = `${holdingPeriod}`
       
-      flipResult.querySelector('#total-expenses').innerText = `$${OwnerPaidUtils.toFixed(2)}`
+      flipResult.querySelector('#total-expenses').innerText = `$${totalExpenses.toFixed(2)}`
       flipResult.querySelector('#property-taxes').innerText = `$${propertyTaxes.toFixed(2)}`
       flipResult.querySelector('#insurance').innerText = `$${insurance.toFixed(2)}`
       flipResult.querySelector('#gas-and-electric').innerText = `$${gas.toFixed(2)}`
