@@ -342,6 +342,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
       let loan = downPaymentPurchase + downPaymentRehab
       let totalInterest = loan * (interestRatePercent/100) * holdingPeriod / 12
+      let loanAmount = totalCost - downPaymentPurchase - downPaymentRehab
+      let interestCost = loanAmount * (interestRatePercent/100) / holdingPeriod
+      let financingCost = interestCost + processingFee
       // let loanEstimate = totalInterest + processingFee
       let loanEstimate = processingFee
       let grossMargin = targetPrice - totalCost - loanEstimate - totalExpenses - closingCost
@@ -354,21 +357,26 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
       flipResult.querySelector('#holding-period').innerText = `${holdingPeriod}`
       
-      flipResult.querySelector('#total-expenses').innerText = `$${totalExpenses.toFixed(2)}`
       flipResult.querySelector('#property-taxes').innerText = `$${propertyTaxes.toFixed(2)}`
       flipResult.querySelector('#insurance').innerText = `$${insurance.toFixed(2)}`
       flipResult.querySelector('#gas-and-electric').innerText = `$${gas.toFixed(2)}`
       flipResult.querySelector('#water-and-sewer').innerText = `$${(water+sewer).toFixed(2)}`
       flipResult.querySelector('#garbage').innerText = `$${garbage.toFixed(2)}`
       flipResult.querySelector('#lawn-and-snow').innerText = `$${landNSnow.toFixed(2)}`
+      flipResult.querySelector('#total-expenses').innerText = `$${totalExpenses.toFixed(2)}`
+      
+      flipResult.querySelector('#loan-amount').innerText = `$${loanAmount.toFixed(2)}`
 
-      flipResult.querySelector('#financing-cost').innerText = `$${processingFee.toFixed(2)}`
+      flipResult.querySelector('#interest-costs').innerText = `$${interestCost.toFixed(2)}`
+
+      flipResult.querySelector('#financing-cost').innerText = `$${financingCost.toFixed(2)}`
+
       flipResult.querySelector('#closing-costs').innerText = `$${closingCost.toFixed(2)}`
 
       flipResult.querySelector('#all-in-cost').innerText = `$${totalCost.toFixed(2)}`
       flipResult.querySelector('#target-price-arv').innerText = `$${targetPrice.toFixed(2)}`
-      flipResult.querySelector('#sale-fee').innerText = `$${saleFee.toFixed(2)}`
       flipResult.querySelector('#gross-margin').innerText = `$${grossMargin.toFixed(2)}`
+      flipResult.querySelector('#sale-fee').innerText = `$${saleFee.toFixed(2)}`
       flipResult.querySelector('#net-profiit').innerText = `$${netProfit.toFixed(2)}`
     });
 
