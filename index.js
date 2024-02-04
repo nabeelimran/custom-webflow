@@ -365,11 +365,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
       flipResult.querySelector('#lawn-and-snow').innerText = `$${landNSnow.toFixed(2)}`
       flipResult.querySelector('#total-expenses').innerText = `$${totalExpenses.toFixed(2)}`
       
-      flipResult.querySelector('#loan-amount').innerText = `$${loanAmount.toFixed(2)}`
-
       flipResult.querySelector('#interest-costs').innerText = `$${interestCost.toFixed(2)}`
-
+      
+      flipResult.querySelector('#processing-fee').innerText = `$${processingFee.toFixed(2)}`
+      
       flipResult.querySelector('#financing-cost').innerText = `$${financingCost.toFixed(2)}`
+
+      flipResult.querySelector('#loan-amount').innerText = `$${loanAmount.toFixed(2)}`
+      
+      flipResult.querySelector('#down-payment').innerText = `$${loan.toFixed(2)}`
 
       flipResult.querySelector('#closing-costs').innerText = `$${closingCost.toFixed(2)}`
 
