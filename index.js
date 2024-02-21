@@ -147,31 +147,31 @@ document.addEventListener("DOMContentLoaded", (event) => {
       ).innerText = `$${currentValues.grossRent}`;
       currentExpenseEl.querySelector(
         "#total-expenses"
-      ).innerText = `$${currentTotalOperatingExpenses.toFixed(2)}`;
+      ).innerText = `$${currentTotalOperatingExpenses.toLocaleString()}`;
       currentExpenseEl.querySelector(
         "#management"
-      ).innerText = `$${currentValues.propertyManagement.toFixed(2)}`;
+      ).innerText = `$${currentValues.propertyManagement.toLocaleString()}`;
       currentExpenseEl.querySelector(
         "#taxes"
-      ).innerText = `$${currentValues.propertyTaxes.toFixed(2)}`;
+      ).innerText = `$${currentValues.propertyTaxes.toLocaleString()}`;
       currentExpenseEl.querySelector(
         "#insurance"
-      ).innerText = `$${currentValues.insurance.toFixed(2)}`;
+      ).innerText = `$${currentValues.insurance.toLocaleString()}`;
       currentExpenseEl.querySelector(
         "#utilities"
-      ).innerText = `$${currentValues.ownerPaidUtilities.toFixed(2)}`;
+      ).innerText = `$${currentValues.ownerPaidUtilities.toLocaleString()}`;
       currentExpenseEl.querySelector(
         "#vacancy"
-      ).innerText = `$${currentValues.vacancyReserve.toFixed(2)}`;
+      ).innerText = `$${currentValues.vacancyReserve.toLocaleString()}`;
       currentExpenseEl.querySelector(
         "#maintenance"
-      ).innerText = `$${currentValues.maintenanceReserve.toFixed(2)}`;
+      ).innerText = `$${currentValues.maintenanceReserve.toLocaleString()}`;
       currentExpenseEl.querySelector(
         "#monthly-noi"
-      ).innerText = `$${currentMonthlyNOI.toFixed(2)}`;
+      ).innerText = `$${currentMonthlyNOI.toLocaleString()}`;
       currentExpenseEl.querySelector(
         "#annualized-noi"
-      ).innerText = `$${currentAnnualizedNOI.toFixed(2)}`;
+      ).innerText = `$${currentAnnualizedNOI.toLocaleString()}`;
       currentExpenseEl.querySelector(
         "#capitalization"
       ).innerText = `${currentCapitalizationRate}%`;
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       ).innerText = `$${mortgageValues.salePrice}`;
       currentMortgageEl.querySelector(
         "#monthly-mortgage"
-      ).innerText = `$${monthlyMortgage.toFixed(2)}`;
+      ).innerText = `$${monthlyMortgage.toLocaleString()}`;
       currentMortgageEl.querySelector(
         "#loan-to-value"
       ).innerText = `${mortgageValues.loanToValueRatio}%`;
@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       ).innerText = `$${mortgageValues.closingCosts}`;
       currentMortgageEl.querySelector(
         "#principal"
-      ).innerText = `$${mortgageValues.principal.toFixed(2)}`;
+      ).innerText = `$${mortgageValues.principal.toLocaleString()}`;
       currentMortgageEl.querySelector(
         "#interest-rate"
       ).innerText = `${mortgageValues.interestRate}%`;
@@ -201,11 +201,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         "#term"
       ).innerText = `${mortgageValues.termYears}`;
       currentMortgageEl.querySelector(
+        "cash-invested"
+      ).innerText = `$${(mortgageValues.downPayment + mortgageValues.closingCosts).toLocaleString()}`;
+      currentMortgageEl.querySelector(
         "#monthly-net"
-      ).innerText = `$${currentMonthlyNet.toFixed(2)}`;
+      ).innerText = `$${currentMonthlyNet.toLocaleString()}`;
       currentMortgageEl.querySelector(
         "#annualized-net"
-      ).innerText = `$${currentAnnualizedNet.toFixed(2)}`;
+      ).innerText = `$${currentAnnualizedNet.toLocaleString()}`;
       currentMortgageEl.querySelector(
         "#annualized-roi"
       ).innerText = `${currentAnnualizedROI}%`;
@@ -215,31 +218,31 @@ document.addEventListener("DOMContentLoaded", (event) => {
       ).innerText = `$${stabilizedValues.grossRent}`;
       futureExpenseEl.querySelector(
         "#total-expenses"
-      ).innerText = `$${stabilizedTotalOperatingExpenses.toFixed(2)}`;
+      ).innerText = `$${stabilizedTotalOperatingExpenses.toLocaleString()}`;
       futureExpenseEl.querySelector(
         "#management"
-      ).innerText = `$${stabilizedValues.propertyManagement.toFixed(2)}`;
+      ).innerText = `$${stabilizedValues.propertyManagement.toLocaleString()}`;
       futureExpenseEl.querySelector(
         "#taxes"
-      ).innerText = `$${stabilizedValues.propertyTaxes.toFixed(2)}`;
+      ).innerText = `$${stabilizedValues.propertyTaxes.toLocaleString()}`;
       futureExpenseEl.querySelector(
         "#insurance"
-      ).innerText = `$${stabilizedValues.insurance.toFixed(2)}`;
+      ).innerText = `$${stabilizedValues.insurance.toLocaleString()}`;
       futureExpenseEl.querySelector(
         "#utilities"
-      ).innerText = `$${stabilizedValues.ownerPaidUtilities.toFixed(2)}`;
+      ).innerText = `$${stabilizedValues.ownerPaidUtilities.toLocaleString()}`;
       futureExpenseEl.querySelector(
         "#vacancy"
-      ).innerText = `$${stabilizedValues.vacancyReserve.toFixed(2)}`;
+      ).innerText = `$${stabilizedValues.vacancyReserve.toLocaleString()}`;
       futureExpenseEl.querySelector(
         "#maintenance"
-      ).innerText = `$${stabilizedValues.maintenanceReserve.toFixed(2)}`;
+      ).innerText = `$${stabilizedValues.maintenanceReserve.toLocaleString()}`;
       futureExpenseEl.querySelector(
         "#monthly-noi"
-      ).innerText = `$${stabilizedMonthlyNOI.toFixed(2)}`;
+      ).innerText = `$${stabilizedMonthlyNOI.toLocaleString()}`;
       futureExpenseEl.querySelector(
         "#annualized-noi"
-      ).innerText = `$${stabilizedAnnualizedNOI.toFixed(2)}`;
+      ).innerText = `$${stabilizedAnnualizedNOI.toLocaleString()}`;
       futureExpenseEl.querySelector(
         "#capitalization"
       ).innerText = `${stabilizedCapitalizationRate}%`;
@@ -249,7 +252,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       ).innerText = `$${mortgageValues.salePrice}`;
       futureMortgageEl.querySelector(
         "#monthly-mortgage"
-      ).innerText = `$${monthlyMortgage.toFixed(2)}`;
+      ).innerText = `$${monthlyMortgage.toLocaleString()}`;
       futureMortgageEl.querySelector(
         "#loan-to-value"
       ).innerText = `${mortgageValues.loanToValueRatio}%`;
@@ -261,7 +264,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       ).innerText = `$${mortgageValues.closingCosts}`;
       futureMortgageEl.querySelector(
         "#principal"
-      ).innerText = `$${mortgageValues.principal.toFixed(2)}`;
+      ).innerText = `$${mortgageValues.principal.toLocaleString()}`;
       futureMortgageEl.querySelector(
         "#interest-rate"
       ).innerText = `${mortgageValues.interestRate}%`;
@@ -269,11 +272,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         "#term"
       ).innerText = `${mortgageValues.termYears}`;
       futureMortgageEl.querySelector(
+        "cash-invested"
+      ).innerText = `$${(mortgageValues.downPayment + mortgageValues.closingCosts).toLocaleString()}`;
+      futureMortgageEl.querySelector(
         "#monthly-net"
-      ).innerText = `$${stabilizedMonthlyNet.toFixed(2)}`;
+      ).innerText = `$${stabilizedMonthlyNet.toLocaleString()}`;
       futureMortgageEl.querySelector(
         "#annualized-net"
-      ).innerText = `$${stabilizedAnnualizedNet.toFixed(2)}`;
+      ).innerText = `$${stabilizedAnnualizedNet.toLocaleString()}`;
       futureMortgageEl.querySelector(
         "#annualized-roi"
       ).innerText = `${stabilizedAnnualizedROI}%`;
@@ -310,6 +316,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
       // }
 
       // Expenses
+      let purchasePrice = formDataObj["Purchase-Price-2"];
+      let rehab = formDataObj["Rehab-2"];
       let totalCost = formDataObj["Purchase-Price-2"] + formDataObj["Rehab-2"];
       let holdingPeriod = formDataObj["Holding-Period"];
       let targetPrice = formDataObj["Resell-Price"];
@@ -340,14 +348,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
       let interestRatePercent = formDataObj["Interest-Rate"];
       let processingFee = formDataObj["Financing-Costs"];
 
-      let loan = downPaymentPurchase + downPaymentRehab
-      let totalInterest = loan * (interestRatePercent/100) * holdingPeriod / 12
-      let loanAmount = totalCost - downPaymentPurchase - downPaymentRehab
+      let totalDownPayment = downPaymentPurchase + downPaymentRehab
+      // let totalInterest = totalDownPayment * (interestRatePercent/100) * holdingPeriod / 12
+      let loanAmount = totalCost - totalDownPayment
       let interestCost = loanAmount * (interestRatePercent/100) / holdingPeriod
       let financingCost = interestCost + processingFee
       // let loanEstimate = totalInterest + processingFee
-      let loanEstimate = processingFee
-      let grossMargin = targetPrice - totalCost - loanEstimate - totalExpenses - closingCost
+      let allInCost = totalExpenses + financingCost + loanAmount + totalDownPayment + closingCost
+      let grossMargin = targetPrice - allInCost
 
       let netProfit = grossMargin - saleFee
 
@@ -357,31 +365,35 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
       flipResult.querySelector('#holding-period').innerText = `${holdingPeriod}`
       
-      flipResult.querySelector('#property-taxes').innerText = `$${propertyTaxes.toFixed(2)}`
-      flipResult.querySelector('#insurance').innerText = `$${insurance.toFixed(2)}`
-      flipResult.querySelector('#gas-and-electric').innerText = `$${gas.toFixed(2)}`
-      flipResult.querySelector('#water-and-sewer').innerText = `$${(water+sewer).toFixed(2)}`
-      flipResult.querySelector('#garbage').innerText = `$${garbage.toFixed(2)}`
-      flipResult.querySelector('#lawn-and-snow').innerText = `$${landNSnow.toFixed(2)}`
-      flipResult.querySelector('#total-expenses').innerText = `$${totalExpenses.toFixed(2)}`
+      flipResult.querySelector('#property-taxes').innerText = `$${propertyTaxes.toLocaleString()}`
+      flipResult.querySelector('#insurance').innerText = `$${insurance.toLocaleString()}`
+      flipResult.querySelector('#gas-and-electric').innerText = `$${gas.toLocaleString()}`
+      flipResult.querySelector('#water-and-sewer').innerText = `$${(water+sewer).toLocaleString()}`
+      flipResult.querySelector('#garbage').innerText = `$${garbage.toLocaleString()}`
+      flipResult.querySelector('#lawn-and-snow').innerText = `$${landNSnow.toLocaleString()}`
+      flipResult.querySelector('#total-expenses').innerText = `$${totalExpenses.toLocaleString()}`
       
-      flipResult.querySelector('#interest-costs').innerText = `$${interestCost.toFixed(2)}`
-      
-      flipResult.querySelector('#processing-fee').innerText = `$${processingFee.toFixed(2)}`
-      
-      flipResult.querySelector('#financing-cost').innerText = `$${financingCost.toFixed(2)}`
+      flipResult.querySelector('#loan-amount').innerText = `$${loanAmount.toLocaleString()}`
 
-      flipResult.querySelector('#loan-amount').innerText = `$${loanAmount.toFixed(2)}`
+      flipResult.querySelector('#interest-costs').innerText = `$${interestCost.toLocaleString()}`
       
-      flipResult.querySelector('#down-payment').innerText = `$${loan.toFixed(2)}`
+      flipResult.querySelector('#processing-fee').innerText = `$${processingFee.toLocaleString()}`
+      
+      flipResult.querySelector('#financing-cost').innerText = `$${financingCost.toLocaleString()}`
+      
+      flipResult.querySelector('#down-payment').innerText = `$${totalDownPayment.toLocaleString()}`
 
-      flipResult.querySelector('#closing-costs').innerText = `$${closingCost.toFixed(2)}`
+      flipResult.querySelector('#closing-costs').innerText = `$${closingCost.toLocaleString()}`
 
-      flipResult.querySelector('#all-in-cost').innerText = `$${totalCost.toFixed(2)}`
-      flipResult.querySelector('#target-price-arv').innerText = `$${targetPrice.toFixed(2)}`
-      flipResult.querySelector('#gross-margin').innerText = `$${grossMargin.toFixed(2)}`
-      flipResult.querySelector('#sale-fee').innerText = `$${saleFee.toFixed(2)}`
-      flipResult.querySelector('#net-profiit').innerText = `$${netProfit.toFixed(2)}`
+      flipResult.querySelector('#all-in-cost').innerText = `$${allInCost.toLocaleString()}`
+
+
+      flipResult.querySelector('#purchase-price').innerText = `$${purchasePrice.toLocaleString()}`
+      flipResult.querySelector('#rehab-price').innerText = `$${rehab.toLocaleString()}`
+      flipResult.querySelector('#target-price-arv').innerText = `$${targetPrice.toLocaleString()}`
+      flipResult.querySelector('#sale-fee').innerText = `$${saleFee.toLocaleString()}`
+      flipResult.querySelector('#gross-margin').innerText = `$${grossMargin.toLocaleString()}`
+      flipResult.querySelector('#net-profiit').innerText = `$${netProfit.toLocaleString()}`
     });
 
   function updateUnitsView(units) {
